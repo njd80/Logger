@@ -1,13 +1,9 @@
 /*!
  * log.js
- * Copyright 2010, Neil Donaldson
+ * Copyright 2010-2014, Neil Donaldson
  * 
+ * see Readme.md for version information
  
- 0.42 01/09/10 
- - check for valid target(t) DOM element
- - append to body if not
-
-	
 */
 log_version="0.42";
 Log = function(id,t) {//string, string div id
