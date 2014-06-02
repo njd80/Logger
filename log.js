@@ -1,25 +1,40 @@
 /*!
  * log.js
- * 0.31
- *
  * Copyright 2010, Neil Donaldson
- * Date: Mon Aug 16 01:00:00 2010
- */
-log_version="0.31";
-Log = function(id,t) {//string, string div name
-	$('#'+t).append('<div id="log_'+id+'"></div>');
-			
-	var l = $('#log_'+id);
-	l.addClass('log');
-	l.append('<p>Log'+log_version+': id:'+id+'</p>');
-	l.find('p').addClass('log_header');
-	//$('#log_'+id+' > p').addClass('log_header');
+ * 
+ 
+ 0.42 01/09/10 
+ - check for valid target(t) DOM element
+ - append to body if not
+
+	
+*/
+log_version="0.42";
+Log = function(id,t) {//string, string div id
+	
+	/*OPTIONS*/
+	/*Template log*/
+	var _log = [
+		'<div id="log_'+id+'" class="log">',
+		'<p class="header">'+id+'</p>',
+		'<div id="w"></div>',
+		'<p class="footer">Log v'+log_version+'</p>',
+		'</div>'
+	].join('\n');
+	
+	if (document.getElementById(t)){
+		$('#'+t).append(_log);	//append new log to target div
+	} else {
+		$('body').append(_log);	//append log to body
+	}
+	//$('#log_'+id);		//the new log
+	//$('#log_'+id+' #w');	//the writing window	
 	
 	this.w = function(txt, wipe) {
 		if (wipe) {
-			l.empty().append('<p>Log Restarted: id='+id+'</p>');
-			l.find('p').addClass('log_header');
+			$('#log_'+id+' #w').empty();
 		}
-		l.append('<p>'+txt+'</p>');		
-	}
+		$('#log_'+id+' #w').append('<p>'+txt+'</p>');
+		return;
+	};
 };
