@@ -13,19 +13,19 @@
 
 <!-- Logger Demo  -->
 <script>
+$(document).ready(function() {
+  //Create a new Logger with an id of "Test" and a var name of "logger"
+  var logger = new Log("Test", "footer");
 
-//Create a new Logger with an id of "Test" and a var name of "logger"
-var logger = new Log("Test", "footer");
+  //Write a test message with overwrite == false
+  logger.w("Test Message", false);
 
-//Write a test message with overwrite == false
-logger.w("Test Message", false);
+  //Write a second test message
+  logger.w("Second Test Message", false);
 
-//Write a second test message
-logger.w("Second Test Message", false);
-
-//Write a test message that overwrites the Logger text window
-logger.w("Third Test Message - Overwrite", true);
-
+  //Write a test message that overwrites the Logger text window
+  logger.w("Third Test Message - Overwrite", true);
+});
 </script>
 
 </head>
