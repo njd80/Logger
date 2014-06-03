@@ -14,7 +14,7 @@
 <!-- Logger Demo  -->
 <script>
 $(document).ready(function() {
-  //Create a new Logger with an id of "Test" and a var name of "logger"
+  //Create a new Logger with an id of "Test" and a var name of "logger" - target the "footer"
   var logger = new Log("Test", "footer");
 
   //Write a test message with overwrite == false
@@ -23,8 +23,11 @@ $(document).ready(function() {
   //Write a second test message
   logger.w("Second Test Message", false);
 
-  //Write a test message that overwrites the Logger text window
-  logger.w("Third Test Message - Overwrite", true);
+  //Create a second Logger with an id of "Test2" and a var name of "logger2" - target the "footer"
+  var logger2 = new Log("Test2", "footer");
+  
+  //Create a third Logger with an id of "Test3" and a var name of "logger3" - do not target any DOM element
+  var logger3 = new Log("Test3");  
 });
 </script>
 
