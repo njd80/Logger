@@ -5,7 +5,7 @@
  * see Readme.md for version information
  
 */
-log_version="0.42";
+log_version="0.43";
 Log = function(id,t) {//string, string div id
 	
 	/*OPTIONS*/
@@ -23,8 +23,6 @@ Log = function(id,t) {//string, string div id
 	} else {
 		$('body').append(_log);	//append log to body
 	}
-	//$('#log_'+id);		//the new log
-	//$('#log_'+id+' #w');	//the writing window	
 	
 	this.w = function(txt, wipe) {
 		if (wipe) {
