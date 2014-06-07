@@ -2,33 +2,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Logger Demonstration - Version 0.43</title>
+<title>Logger Demonstration</title>
 
-<!-- Include jQuery -->
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-<!-- Include Files for Logger (log.css & log.js) //-->
-<link rel="stylesheet" type="text/css" href="log.css" />
+<!-- Include Logger (log.js) //-->
 <script src="log.js"></script>
 
 <!-- Logger Demo  -->
 <script>
-$(document).ready(function() {
-  //Create a new Logger with an id of "Test" and a var name of "logger" - target the "footer"
-  var logger = new Log("Test", "footer");
-
-  //Write a test message with overwrite == false
-  logger.w("Test Message", false);
-
-  //Write a second test message
-  logger.w("Second Test Message", false);
-
-  //Create a second Logger with an id of "Test2" and a var name of "logger2" - target the "footer"
-  var logger2 = new Log("Test2", "footer");
-  
-  //Create a third Logger with an id of "Test3" and a var name of "logger3" - do not target any DOM element
-  var logger3 = new Log("Test3");  
-});
+log("test");
 </script>
 
 </head>

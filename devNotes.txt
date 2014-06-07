@@ -1,0 +1,30 @@
+
+Initialize new log automatically upon page load
+
+new log("text") function to write to the active logger
+
+??remove jQuery dependancy??
+
+default settings array ?
+  overwrite setting - default == no, option to set to yes (always overwrite messages in the log)
+  default size (height / width)
+  default position (right or left, top or bottom)
+    - augment with +/- pixel values
+  move with page scroll or stick in place
+
+  **use default settings unless defined**
+  
+
+ability to create a new log
+- storage for the log(s) - array?
+
+- ability to differentiate between logs
+  log("text") - write to the default log
+  log("text", "log1") - write to the log with an ID of log1
+  
+- ability to switch which log is the "default" (the current one to write to)
+  log.default("log1") / log.default("log2")
+  
+  
+  
+
