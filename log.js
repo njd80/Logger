@@ -5,7 +5,6 @@
  * see Readme.md for version information
  
 */
-
 /*
 log_version="0.43";
 Log = function(id,t) {//string, string div id
@@ -35,31 +34,52 @@ Log = function(id,t) {//string, string div id
 */
 
 (function() {
-
-  /* Default Log Settings */
-  var settings = {
+/* SETTINGS */
+  var parameters = {
     overwrite: false,               //overwrite previous messages
     size: 10,                       //number of messages
     timestamps: true                //show timestamps
   };
 
-  /* Default Log Styling Options */
   var styling = {
     scroll: false,                  //scroll with page or stick
     horizontalPosition: "right",    //page horizontal pos
     verticalPosition: "bottom",     //page vertical pos
     color: "#ddd"                   //background color
   };
+/* END SETTINGS */  
+  
 
-  /* Log Object */
-  var LoggerObj = {
+  /* Create a new Log */
+  function createLog() {
+    var l = new LoggerObject;
     
+    return l;
+  }
+  
+  /* Log Object */
+  var LoggerObject = function() {
+    id: "tempID";
   };
   
+  /* INITIALIZATION */
+  (function () {
+    defaultLog = createLog();
+  })();
   
-  /* Global log function */
+/* *********************************************************** */  
+/* PUBLIC FUNCTIONS */
+  
+  newLog = function() {
+    return createLog();    
+  };
+  
   log = function(text) {
     console.log(text);
+    console.log(defaultLog);
   };
   
+/* END PUBLIC FUNCTIONS */
 })();
+
+
