@@ -49,22 +49,36 @@ Log = function(id,t) {//string, string div id
   };
 /* END SETTINGS */  
   
-
-  /* Create a new Log */
+/* Build logger DOM function */
+  function buildLoggerDOM(id) {
+    var _log = [
+      '<div id="log_'+id+'" class="log">',
+      '<p class="header">'+id+'</p>',
+      '<div id="w"></div>',
+      '<p class="footer"></p>',
+      '</div>'
+    ].join('\n');
+    return _log;
+  }
+  
+/* Log Object */
+  var LoggerObject = function(id) {
+    this.id = id;
+    this.dom = buildLoggerDOM(id);
+  };
+  
+/* Create new Log */
   function createLog() {
-    var l = new LoggerObject;
+    var l = new LoggerObject("tempID");
     
     return l;
   }
   
-  /* Log Object */
-  var LoggerObject = function() {
-    id: "tempID";
-  };
-  
-  /* INITIALIZATION */
+/* INITIALIZATION */
   (function () {
-    defaultLog = createLog();
+    currentLog = createLog();
+    document.onload = function() {
+    };
   })();
   
 /* *********************************************************** */  
@@ -75,8 +89,11 @@ Log = function(id,t) {//string, string div id
   };
   
   log = function(text) {
-    console.log(text);
-    console.log(defaultLog);
+    
+    //console.log(text);
+    console.log(currentLog.id);
+    console.log(currentLog.dom);
+    
   };
   
 /* END PUBLIC FUNCTIONS */
